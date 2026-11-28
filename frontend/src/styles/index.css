@@ -1,0 +1,107 @@
+@import '@fontsource/anton/latin-400.css';
+@import '@fontsource/archivo/latin-400.css';
+@import '@fontsource/archivo/latin-500.css';
+@import '@fontsource/archivo/latin-700.css';
+@import '@fontsource/archivo/latin-800.css';
+@import '@fontsource/tinos/latin-400.css';
+@import '@fontsource/tinos/latin-700.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-cream font-body text-ink antialiased;
+    margin: 0;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-normal uppercase;
+    letter-spacing: 0;
+  }
+  button {
+    @apply font-body;
+  }
+  :focus-visible {
+    outline: 3px solid #75f237;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px #171210;
+  }
+  ::selection {
+    background: #75f237;
+    color: #171210;
+  }
+  input,
+  select,
+  textarea {
+    @apply font-body;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .label-caps {
+    @apply font-body text-[11px] font-extrabold uppercase tracking-[.08em];
+  }
+  .btn-caps {
+    @apply font-body font-extrabold uppercase tracking-[.05em];
+  }
+  .container-page {
+    @apply mx-auto w-full max-w-page px-5 md:px-10 xl:px-[72px];
+  }
+  .sk {
+    position: relative;
+    overflow: hidden;
+    background: #e9dfce;
+  }
+  .sk::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+    animation: shimmer 1.2s infinite;
+  }
+  .ticket-edge {
+    background:
+      radial-gradient(circle at 0 50%, #f2edde 0 9px, transparent 10px) left / 51% 100% no-repeat,
+      radial-gradient(circle at 100% 50%, #f2edde 0 9px, transparent 10px) right / 51% 100% no-repeat;
+  }
+  .scroll-x {
+    position: relative;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .ticket-print {
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+}
+.print-only {
+  display: none;
+}
