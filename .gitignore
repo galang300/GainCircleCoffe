@@ -1,0 +1,31 @@
+# Dependensi dan hasil build
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+
+# Rahasia dan konfigurasi lokal (boleh commit: .env.example)
+.env
+.env.*
+!.env.example
+
+# Hasil tes
+playwright-report/
+test-results/
+
+# Python (GEN-AI/ dan backend bila memakai Python)
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Editor, OS, dan log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.log
+npm-debug.log*

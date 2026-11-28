@@ -1,0 +1,16 @@
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff2 binary
+*.zip binary
+*.pdf binary
+
+# Berkas data dan model dibiarkan apa adanya (tanpa normalisasi akhir baris)
+*.csv -text
+*.ipynb -text
+*.joblib binary
+*.pkl binary
